@@ -89,13 +89,36 @@
 .side-bar {
   background-color: #000000;
   max-width: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
 }
 
 .side-bar__text {
   color: white;
-  padding: 15px;
   margin-left: 30%;
   font-weight: bold;
+  font-size: 30px;
+}
+
+.side-bar__text--promo {
+  max-width: 40%;
+  font-weight: normal;
+}
+
+.side-bar__prom {
+  background-color: #4576F5;
+  margin: auto;
+  padding: 10px;
+  -webkit-transform: skewX(-20deg);
+          transform: skewX(-20deg);
+}
+
+.side-bar__prom__number {
+  -webkit-transform: none;
+          transform: none;
+  color: white;
   font-size: 30px;
 }
 
