@@ -3,5 +3,6 @@
     overflow: hidden;
     &__stripe{
         display: flex;
+        transition: transform .6s ease;
     }
 }
