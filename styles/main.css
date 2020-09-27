@@ -102,4 +102,20 @@
 body {
   font-family: "Roboto", cursive;
 }
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.row__col {
+  width: 30%;
+  padding: 20px;
+}
+
+.sec__img {
+  width: 110px;
+  height: 115px;
+}
 /*# sourceMappingURL=main.css.map */
