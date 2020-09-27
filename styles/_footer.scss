@@ -1,3 +1,14 @@
 .footer{
     background-color: $secondary-color;
+
+    &__section{
+        display: flex;
+    }
+    &__title{
+        color: #ffffff;
+    }
+    &__content{
+        color: #ffffff;
+        font-weight: lighter;
+    }
 }

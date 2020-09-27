@@ -15,4 +15,8 @@
   border: 0;
   @include btnModifier($primary-color);
   width: 170px;
+
+  &--secondary {
+  border-radius: 0px;
+  }
 }

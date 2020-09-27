@@ -86,6 +86,10 @@
   background-color: #2861f3;
 }
 
+.btn--secondary {
+  border-radius: 0px;
+}
+
 .side-bar {
   background-color: #000000;
   max-width: 55%;
@@ -139,6 +143,21 @@
 
 .footer {
   background-color: #000000;
+}
+
+.footer__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__title {
+  color: #ffffff;
+}
+
+.footer__content {
+  color: #ffffff;
+  font-weight: lighter;
 }
 
 body {
