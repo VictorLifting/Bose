@@ -12,10 +12,11 @@ $font: "Roboto", cursive;
 
 body{
     font-family: $font;
+    
 }
 .row{
     display: flex;
-    
+
     &__col{
         
         padding: 20px;
