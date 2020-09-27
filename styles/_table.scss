@@ -1,6 +1,11 @@
 .table{
-   
-    
     border-collapse: collapse;
     border: 3px solid $secondary-color;
+    &__title{
+        border: 3px solid $secondary-color;
+    }
+
+    &__info{
+        border: 3px solid $secondary-color;
+    }
 }
