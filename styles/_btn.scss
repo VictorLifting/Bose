@@ -1,0 +1,18 @@
+@mixin btnModifier($bg, $color: #ffffff) {
+    background-color: $bg;
+    color: $color;
+    
+    &:hover {
+      background-color: darken($bg, 6%);
+    }
+  }
+
+.btn{
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 0px;
+  border: 0;
+  @include btnModifier($primary-color);
+  width: 170px;
+}

@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap");
+
+$primary-color: #4576F5;
+$secondary-color:#000000;
+$font: "Roboto", cursive;
+
+@import 'menu';
+@import 'banner';
+@import 'btn';
+@import'side-banner';
+
+body{
+    font-family: $font;
+}

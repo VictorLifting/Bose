@@ -1,0 +1,30 @@
+.banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-image: url("../imgs/banner-img.png");
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+
+    &__title{
+        margin-left: 13%;
+        font-weight: bold;
+        font-size: 40px;
+        color: white;
+        max-width: 35%;
+        text-align: center;
+    }
+
+    &__text{
+        margin-left: 12%;
+        color: white;
+        font-weight: normal;
+        font-size: 33px;
+    }
+
+    .btn{
+        margin-left: 24.5%;
+        margin-bottom: 10%;
+    }
+}
