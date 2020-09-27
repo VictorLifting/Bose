@@ -15,15 +15,36 @@ body{
 .row{
     display: flex;
     &__col{
-        width: 30%;
+        
         padding: 20px;
+
+        &--3{
+            width: 33.3%;
+
+        }
+
     }
 }
-.sec{
+.sect{
 
+    text-align: center;
 
     &__img{
         width: 110px;
         height:115px ;
     }
+
+    &__title{
+
+        color: $primary-color;
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    &__text{
+        text-align: center;
+        
+    }
+
+
 }

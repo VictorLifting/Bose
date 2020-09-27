@@ -110,12 +110,29 @@ body {
 }
 
 .row__col {
-  width: 30%;
   padding: 20px;
 }
 
-.sec__img {
+.row__col--3 {
+  width: 33.3%;
+}
+
+.sect {
+  text-align: center;
+}
+
+.sect__img {
   width: 110px;
   height: 115px;
+}
+
+.sect__title {
+  color: #4576F5;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.sect__text {
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */
