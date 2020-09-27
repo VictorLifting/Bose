@@ -99,6 +99,17 @@
   font-size: 30px;
 }
 
+.carrousel {
+  width: 80%;
+  overflow: hidden;
+}
+
+.carrousel__stripe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 body {
   font-family: "Roboto", cursive;
 }
