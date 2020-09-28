@@ -20,14 +20,14 @@ function interactionHandle (event){
 
 
 if(bot=='black'){
-    img.setAttribute('src',"../imgs/negro.png");
+    img.setAttribute('src',"./imgs/negro.png");
     
 
 
 
 }
 if(bot=='white'){
-    img.setAttribute('src',"../imgs/white.png");
+    img.setAttribute('src',"./imgs/white.png");
 
 }
     
