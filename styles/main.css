@@ -67,6 +67,7 @@
 }
 
 .banner .btn {
+  margin-top: 0%;
   margin-left: 24.5%;
   margin-bottom: 10%;
 }
@@ -80,6 +81,7 @@
   background-color: #4576F5;
   color: #ffffff;
   width: 170px;
+  margin: auto;
 }
 
 .btn:hover {
@@ -208,5 +210,17 @@ body {
 
 .sect__text {
   text-align: center;
+}
+
+.promotion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.interaction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=main.css.map */
