@@ -155,8 +155,13 @@
   display: flex;
 }
 
+.footer__column {
+  padding: 70px;
+}
+
 .footer__title {
   color: #ffffff;
+  font-weight: normal;
 }
 
 .footer__content {
@@ -191,7 +196,6 @@
   display: -ms-flexbox;
   display: flex;
   margin: auto;
-  background-color: indigo;
 }
 
 .interaction__image {
@@ -235,6 +239,7 @@ body {
 }
 
 .row {
+  margin: 10% 0%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

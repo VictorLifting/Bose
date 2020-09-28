@@ -1,14 +1,28 @@
 .footer{
+
     background-color: $secondary-color;
 
     &__section{
         display: flex;
+
+
+    }
+    &__column{
+        padding: 70px;
+
+
     }
     &__title{
         color: #ffffff;
+        font-weight: normal;
+
+
     }
     &__content{
         color: #ffffff;
         font-weight: lighter;
+
     }
+    
+    
 }
