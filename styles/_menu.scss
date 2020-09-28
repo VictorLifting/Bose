@@ -32,3 +32,29 @@
     }
 
 }
+
+@media screen and (max-width: 900px){
+.menu{
+    &__logo{
+        height: 50px;
+        width: 60px;
+        padding-right: 150px;
+        padding-left: 3%;
+    }
+
+
+    &__text{
+    display: none;
+       
+    }
+
+    &__search{
+        display: none;
+    }
+
+    &__search-icon{
+        display: none;
+    }
+
+}
+}
