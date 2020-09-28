@@ -90,6 +90,32 @@
   margin-bottom: 10%;
 }
 
+@media screen and (max-width: 900px) {
+  .banner {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .banner__title {
+    margin-left: 13%;
+    font-weight: bold;
+    font-size: 35px;
+    color: white;
+    max-width: 55%;
+    text-align: center;
+    padding: 5%;
+  }
+  .banner__text {
+    margin-left: 12%;
+    color: white;
+    font-weight: normal;
+    font-size: 25px;
+    max-width: 65%;
+    text-align: center;
+    padding: 3%;
+  }
+}
+
 .btn {
   border-radius: 20px;
   font-size: 20px;

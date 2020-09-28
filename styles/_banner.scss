@@ -29,3 +29,30 @@
         margin-bottom: 10%;
     }
 }
+@media screen and (max-width: 900px){
+
+    .banner{
+
+            justify-content: center;
+        &__title{
+            margin-left: 13%;
+            font-weight: bold;
+            font-size: 35px;
+            color: white;
+            max-width: 55%;
+            text-align: center;
+            padding: 5%;
+        }
+    
+        &__text{
+            margin-left: 12%;
+            color: white;
+            font-weight: normal;
+            font-size: 25px;
+            max-width: 65%;
+            text-align: center;
+            padding: 3%;
+        }
+
+    }
+}
