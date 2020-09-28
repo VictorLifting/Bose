@@ -11,25 +11,24 @@ $font: "Roboto", cursive;
 @import 'carrousel';
 @import 'footer';
 @import 'table';
+@import 'interaction';
+
 
 body{
-    font-family: $font;
-    
+    font-family: $font;  
 }
+
 .row{
+
     display: flex;
-
     &__col{
-        
         padding: 20px;
-
         &--3{
             width: 33.3%;
-
         }
-
     }
 }
+
 .sect{
 
     text-align: center;
@@ -50,16 +49,10 @@ body{
         text-align: center;
         
     }
-
-
 }
 
 .promotion{
 
     display: flex;
-
 }
 
-.interaction{
-    display: flex;
-}

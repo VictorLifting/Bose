@@ -7,8 +7,7 @@ carrousel.addEventListener('click', function(){
     if(current>3){
         current=0;
     }
-
-
+    
     carrouselStripe.style.transform ='translate(-'+(1500*current)+'px, 0px)'
     console.log(800*current)
 
