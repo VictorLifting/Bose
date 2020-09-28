@@ -1,8 +1,27 @@
 .carrousel{
     width: 80%;
     overflow: hidden;
+    margin: auto;
+    height: 500px;
+   // background-color: lightgreen;
+
     &__stripe{
         display: flex;
         transition: transform .6s ease;
+        
+    }
+
+    &__left{
+
+    background-image: url("../imgs/arrow2.png");
+    background-color: lightpink;
+
+    }
+
+    &__right{
+        
+        background-image: url("../imgs/arrow2.png");
+        background-color: lightpink;
+
     }
 }

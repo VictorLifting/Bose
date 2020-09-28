@@ -130,9 +130,42 @@
   font-size: 30px;
 }
 
+@media screen and (max-width: 900px) {
+  .side-bar {
+    max-width: auto;
+  }
+  .side-bar__text {
+    color: white;
+    margin-left: auto;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .side-bar__prom {
+    background-color: #4576F5;
+    margin: auto;
+    padding: 10px;
+    -webkit-transform: skewX(-20deg);
+            transform: skewX(-20deg);
+  }
+  .side-bar__prom__number {
+    -webkit-transform: none;
+            transform: none;
+    color: white;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .side-bar {
+    max-width: auto;
+  }
+}
+
 .carrousel {
   width: 80%;
   overflow: hidden;
+  margin: auto;
+  height: 500px;
 }
 
 .carrousel__stripe {
@@ -143,6 +176,16 @@
   transition: -webkit-transform .6s ease;
   transition: transform .6s ease;
   transition: transform .6s ease, -webkit-transform .6s ease;
+}
+
+.carrousel__left {
+  background-image: url("../imgs/arrow2.png");
+  background-color: lightpink;
+}
+
+.carrousel__right {
+  background-image: url("../imgs/arrow2.png");
+  background-color: lightpink;
 }
 
 .footer {
@@ -234,6 +277,36 @@
   width: 300px;
 }
 
+@media screen and (max-width: 900px) {
+  .newsletter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 5% 0%;
+  }
+  .newsletter__title {
+    margin: auto;
+    padding: 20px;
+    font-size: 40px;
+  }
+  .newsletter__text {
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+  }
+  .newsletter__info {
+    margin: auto;
+    padding: 150px;
+  }
+  .newsletter__input {
+    width: 100px;
+  }
+}
+
 body {
   font-family: "Roboto", cursive;
 }
@@ -273,8 +346,28 @@ body {
 }
 
 .promotion {
+  margin-top: 170px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media screen and (max-width: 900px) {
+  .row {
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .row__col {
+    padding: 20px;
+  }
+  .row__col--3 {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

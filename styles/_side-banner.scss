@@ -7,7 +7,7 @@
    
 
     &__text{
-        
+
         color: white;
      
       margin-left: 30%;
@@ -19,6 +19,8 @@
             font-weight: normal;
         }
     }
+
+
 
 
     &__prom{
@@ -35,5 +37,49 @@
 
         }
     }
+
+
  
+}
+@media screen and (max-width: 900px){
+
+    .side-bar{
+     max-width: auto;
+
+    
+    &__text{
+
+        color: white;
+        margin-left: auto;
+        font-weight: bold;
+        font-size: 20px;   
+
+    }
+
+    &__prom{
+        background-color: $primary-color;
+        margin: auto;
+        padding: 10px;
+        transform: skewX(-20deg);
+        &__number{
+            transform: none;
+            color: white;
+            font-size: 20px;
+            
+
+
+        }
+    }
+
+
+
+    
+}
+}
+
+@media screen and (max-width: 600px){
+
+    .side-bar{
+        max-width: auto;
+    }
 }
