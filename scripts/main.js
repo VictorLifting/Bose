@@ -1,6 +1,7 @@
 const carrousel = document.querySelector('.carrousel');
 const carrouselStripe = document.querySelector('.carrousel__stripe');
-let btnInteraction = document.querySelectorAll('btn btn--interaction');
+var btnInteraction = document.querySelectorAll('.btn--interaction');
+const img = document.querySelector('.interaction__image');
 let current=0;
 
 carrousel.addEventListener('click', function(){
@@ -14,11 +15,25 @@ carrousel.addEventListener('click', function(){
 
 })
 
-for (let i = 0; i < btnInteraction.length; i++) {
-    console.log('holas');
-     
+function interactionHandle (event){
+    var bot = event.target.getAttribute('name');
+
+
+if(bot=='black'){
+    img.setAttribute('src',"./imgs/negro.png");
     
 
-    
+
 
 }
+if(bot=='white'){
+    img.setAttribute('src',"./imgs/white.png");
+
+}
+    
+}
+
+btnInteraction.forEach(function(elem,index){
+  elem.addEventListener('click', interactionHandle)  
+
+})
