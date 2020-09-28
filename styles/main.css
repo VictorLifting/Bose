@@ -278,6 +278,7 @@
   display: -ms-flexbox;
   display: flex;
   margin: auto;
+  margin-top: 40px;
 }
 
 .interaction__image {
