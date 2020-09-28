@@ -1,0 +1,42 @@
+.newsletter{
+    
+
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0%;
+
+    &__title{
+
+
+    margin: auto;
+    padding: 20px;
+    font-size: 40px;        
+
+    }
+
+    &__text{
+
+        margin: auto;
+        padding: 10px;
+
+
+
+    }
+
+    &__info{
+
+        margin: auto;
+        padding: 10px;
+
+
+    }
+
+
+    &__input{
+
+        width: 300px;
+ 
+
+    }
+
+}

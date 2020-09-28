@@ -1,28 +1,25 @@
 .side-bar{
+
     background-color: $secondary-color;
     max-width: 55%;
     display: flex;
     margin-top: 20px;
    
-    
-    
-    &__text{
 
+    &__text{
+        
         color: white;
      
       margin-left: 30%;
         font-weight: bold;
-        font-size: 30px;
- 
-       
+        font-size: 30px;   
 
         &--promo{
             max-width: 40%;
             font-weight: normal;
         }
-
-
     }
+
 
     &__prom{
         background-color: $primary-color;
@@ -35,9 +32,8 @@
             font-size: 30px;
             
 
+
         }
     }
-
-    
-
+ 
 }
