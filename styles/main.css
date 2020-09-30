@@ -317,6 +317,14 @@
   width: 60%;
 }
 
+.interaction .btn--interaction {
+  background-color: blueviolet;
+}
+
+.interaction__btns {
+  padding-left: 30%;
+}
+
 @media screen and (max-width: 900px) {
   .interaction {
     display: -webkit-box;
@@ -328,6 +336,12 @@
   .interaction__image {
     width: 100%;
     margin: 0px;
+  }
+  .interaction__btns {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-left: 40%;
   }
 }
 

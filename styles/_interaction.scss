@@ -13,8 +13,14 @@
     .btn
     {
         &--interaction{
-            
+            background-color: blueviolet;
         }
+    }
+
+    &__btns{
+
+
+       padding-left: 30%;
     }
 
 
@@ -31,6 +37,13 @@
         &__image{
             width: 100%;
             margin: 0px;
+        }
+
+
+
+        &__btns{
+           justify-content: center;
+           padding-left: 40%;
         }
     
     
