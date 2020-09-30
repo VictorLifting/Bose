@@ -68,7 +68,14 @@
   background-position: center;
 }
 
+.banner__section {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .banner__title {
+  padding: 2%;
   margin-left: 13%;
   font-weight: bold;
   font-size: 40px;
@@ -85,25 +92,19 @@
 }
 
 .banner .btn {
-  margin-top: 0%;
+  margin-top: 1%;
   margin-left: 24.5%;
   margin-bottom: 10%;
 }
 
 @media screen and (max-width: 900px) {
-  .banner {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
   .banner__title {
     margin-left: 13%;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 37px;
     color: white;
     max-width: 55%;
     text-align: center;
-    padding: 5%;
   }
   .banner__text {
     margin-left: 12%;
@@ -151,6 +152,7 @@
   display: -ms-flexbox;
   display: flex;
   margin-top: 20px;
+  padding: 2%;
 }
 
 .side-bar__text {

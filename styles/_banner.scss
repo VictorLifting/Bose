@@ -7,7 +7,15 @@
     background-size: cover;
     background-position: center;
 
+
+
+    &__section{
+        justify-content: center;
+       // background-color: lime;
+    }
+
     &__title{
+        padding: 2%;
         margin-left: 13%;
         font-weight: bold;
         font-size: 40px;
@@ -24,24 +32,27 @@
     }
 
     .btn{
-        margin-top: 0%;
+        
+        margin-top: 1%;
         margin-left: 24.5%;
         margin-bottom: 10%;
+       
     }
 }
 @media screen and (max-width: 900px){
 
     .banner{
 
-            justify-content: center;
+           // justify-content: center;
+
         &__title{
             margin-left: 13%;
             font-weight: bold;
-            font-size: 35px;
+            font-size: 37px;
             color: white;
             max-width: 55%; 
             text-align: center;
-            padding: 5%;
+            
         }
     
         &__text{
