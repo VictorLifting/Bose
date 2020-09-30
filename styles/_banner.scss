@@ -7,15 +7,17 @@
     background-size: cover;
     background-position: center;
 
-
-
     &__section{
+
         justify-content: center;
        // background-color: lime;
+
     }
 
+
     &__title{
-        padding: 2%;
+
+        padding: 1%;
         margin-left: 13%;
         font-weight: bold;
         font-size: 40px;
@@ -25,7 +27,7 @@
     }
 
     &__text{
-        margin-left: 12%;
+        margin-left: 10%;
         color: white;
         font-weight: normal;
         font-size: 33px;

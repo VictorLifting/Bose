@@ -16,6 +16,7 @@
 .menu__text {
   color: white;
   padding-right: 150px;
+  margin-top: 1%;
 }
 
 .menu__search {
@@ -75,7 +76,7 @@
 }
 
 .banner__title {
-  padding: 2%;
+  padding: 1%;
   margin-left: 13%;
   font-weight: bold;
   font-size: 40px;
@@ -85,7 +86,7 @@
 }
 
 .banner__text {
-  margin-left: 12%;
+  margin-left: 10%;
   color: white;
   font-weight: normal;
   font-size: 33px;
@@ -214,10 +215,11 @@
 }
 
 .carrousel {
-  width: 80%;
   overflow: hidden;
   margin: auto;
-  height: 500px;
+  height: 600px;
+  background-color: lawngreen;
+  width: 80%;
 }
 
 .carrousel__stripe {
@@ -228,16 +230,17 @@
   transition: -webkit-transform .6s ease;
   transition: transform .6s ease;
   transition: transform .6s ease, -webkit-transform .6s ease;
+  background-color: magenta;
+  width: 50%;
+  height: 100%;
 }
 
 .carrousel__left {
   background-image: url("../imgs/arrow2.png");
-  background-color: lightpink;
 }
 
 .carrousel__right {
-  background-image: url("../imgs/arrow2.png");
-  background-color: lightpink;
+  background-image: url("../imgs/arrow.png");
 }
 
 .footer {
@@ -432,7 +435,7 @@ body {
 }
 
 .promotion {
-  margin-top: 170px;
+  margin: 5% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
