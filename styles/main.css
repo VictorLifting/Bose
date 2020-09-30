@@ -34,6 +34,10 @@
   height: 20px;
 }
 
+.menu__hamburger {
+  display: none;
+}
+
 @media screen and (max-width: 900px) {
   .menu__logo {
     height: 50px;
@@ -49,6 +53,13 @@
   }
   .menu__search-icon {
     display: none;
+  }
+  .menu__hamburger {
+    display: block;
+    right: 10px;
+    height: 25px;
+    margin-top: 10px;
+    margin-left: 45%;
   }
 }
 

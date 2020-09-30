@@ -32,6 +32,11 @@
         height: 20px;
     }
 
+    &__hamburger{
+        display: none;
+
+    }
+
 }
 
 @media screen and (max-width: 900px){
@@ -55,6 +60,13 @@
 
     &__search-icon{
         display: none;
+    }
+    &__hamburger{
+        display: block;
+        right: 10px;
+        height:25px;
+        margin-top: 10px;
+        margin-left: 45%;
     }
 
 }
