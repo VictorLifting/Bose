@@ -88,12 +88,13 @@
 
 .banner__title {
   padding: 1%;
-  margin-left: 13%;
+  margin-left: 0%;
   font-weight: bold;
   font-size: 40px;
   color: white;
   max-width: 35%;
   text-align: center;
+  margin-bottom: auto;
 }
 
 .banner__text {
@@ -101,12 +102,17 @@
   color: white;
   font-weight: normal;
   font-size: 33px;
+  margin-bottom: 100px;
 }
 
 .banner .btn {
   margin-top: 1%;
   margin-left: 24.5%;
   margin-bottom: 10%;
+}
+
+.banner--secondary {
+  background-image: url("../imgs/banner-tienda.png");
 }
 
 @media screen and (max-width: 900px) {
@@ -415,6 +421,75 @@
   .newsletter__input {
     width: 100px;
   }
+}
+
+.product {
+  border-bottom: 1px solid gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 15%;
+  background-color: green;
+}
+
+.product__img {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 10px;
+  margin-right: 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.product__title {
+  margin-top: 0px;
+  font-weight: lighter;
+}
+
+.product__price {
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 400px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.form__title {
+  margin-top: 0;
+}
+
+.form__label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.loader {
+  display: none;
+}
+
+.loader--show {
+  display: block;
 }
 
 * {
