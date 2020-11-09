@@ -13,6 +13,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const loader = document.querySelector(".loader");
+let selectedItem = null;
 
   
   const productsList = document.querySelector('.productslist');
@@ -59,6 +60,7 @@ const loader = document.querySelector(".loader");
         form.title.value=elem.title;
         form.image.value=elem.img;
         form.price.value=elem.price;
+        selectedItem =elem;
       })
      
       
@@ -92,6 +94,28 @@ const loader = document.querySelector(".loader");
   const form = document.querySelector('.form');
   form.addEventListener('submit', function (event) {
     event.preventDefault();
+
+    // Create a root reference
+    var storageRef = firebase.storage().ref();
+
+// Create a reference to 'mountains.jpg'
+    var newImageRef = storageRef.child('mountains.jpg');
+
+    var file = form.imageFile[0];// use the Blob or File API
+
+    // Create file metadata including the content type
+  var metadata = {
+  contentType: 'image/jpeg',
+  };
+
+// Upload the file and metadata
+
+
+    newImageRef.put(file,metadata).then(function(snapshot) {
+  console.log('Uploaded a blob or file!');
+});
+
+return;
   
     const newProduct = {
       title: form.title.value,
@@ -101,15 +125,40 @@ const loader = document.querySelector(".loader");
 
     loader.classList.add("loader--show");
 
-    productsRef.add(newProduct)
-  .then(function(docRef) {
-      console.log("Document written with ID: ", docRef.id);
-      getProducts();
-  })
-  .catch(function(error) {
-      console.error("Error adding document: ", error);
-  });
 
+
+    function handleThen(docRef) {
+        
+      getProducts();
+      form.title.value = '';
+      form.image.value = '';
+      form.price.value = '';
+      selectedItem =null;
+
+  }
+
+
+
+  function handleCatch  (error) {
+    console.error("Error adding document: ", error);
+}
+
+// si existe, es decir que va a editar
+    if(selectedItem){
+      productsRef.doc(selectedItem.id).set(newProduct).
+      then(handleThen)
+    .catch(handleCatch);
+
+    }
+    else{
+      
+    //si no existe es porque es un nuevo producto
+
+
+    productsRef.add(newProduct)
+  .then(handleThen)
+  .catch(handleCatch);
+  }
   });
 
 
