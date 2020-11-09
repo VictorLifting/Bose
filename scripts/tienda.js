@@ -1,7 +1,4 @@
 
-// Initialize Firebase
-
-firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const loader = document.querySelector(".loader");
 let selectedItem = null;

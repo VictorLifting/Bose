@@ -9,6 +9,24 @@
     
 <body>
 
+    <header>
+        <div class="auth">
+          <div class="auth__without hidden">
+            <a href="/inicio-sesion.html">Iniciar sesión</a>
+            <a href="/register.html">Registrarse</a>
+          </div>
+          <div class="auth__with hidden">
+            <a href="/perfil.html" class="auth__profile">
+              <img src="" alt="">
+              <span></span>
+            </a>
+            <a href="#" class="auth__signout">
+              Cerrar sesión
+            </a>
+          </div>
+        </div>
+      </header>
+
     <section class="menu">
         <img src="./imgs/bose_logo.png" class="menu__logo" alt="logo">
         <p class="menu__text">Audifonos</p>
@@ -28,6 +46,8 @@
 
 
     </article>
+
+    
 
     <section class="side-bar">
         <h1 class="side-bar__text">PRODUCTOS</h1>
@@ -126,7 +146,9 @@
 <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
 <script src="./scripts/firebase.js"></script>
 <script src="./scripts/tienda.js"></script>
+<script src="./scripts/auth.js"></script>
 
 </html> 

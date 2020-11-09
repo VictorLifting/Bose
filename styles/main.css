@@ -484,12 +484,21 @@
   margin-bottom: 20px;
 }
 
+.form__error {
+  color: red;
+  font-weight: 600;
+}
+
 .loader {
   display: none;
 }
 
 .loader--show {
   display: block;
+}
+
+.hidden {
+  display: none;
 }
 
 * {

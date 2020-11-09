@@ -10,7 +10,7 @@
 
     <form class="form register">
         <h2 class="form__title">Registro</h2>
-    
+
         <label class="form__label">
           Nombre
           <input required type="text" name="firstname" />
@@ -25,7 +25,7 @@
           Celular
           <input required type="text" name="phone" />
         </label>
-    
+ 
         <label class="form__label">
           Correo
           <input required type="email" name="email" />
@@ -35,10 +35,11 @@
           Contraseña
           <input required type="password" name="password" />
         </label>
-    
+ 
         <p class="form__error hidden">
           Ya existe un usuario registrado con este correo.
         </p>
+        
     
         <button type="submit">
           Registrarme
@@ -50,8 +51,9 @@
 
 
 
-    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-authentication.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
 <script src="./scripts/firebase.js"></script>
 <script src="./scripts/register.js"></script>
     
