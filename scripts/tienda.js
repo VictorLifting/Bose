@@ -89,24 +89,22 @@ let selectedItem = null;
 // Create a reference to 'mountains.jpg'
     var newImageRef = storageRef.child('mountains.jpg');
 
-    var file = form.imageFile[0];// use the Blob or File API
+    var file = form.imageFile.files[0];// use the Blob or File API
 
     // Create file metadata including the content type
-  var metadata = {
-  contentType: 'image/jpeg',
-  };
+
 
 // Upload the file and metadata
 
 
-    newImageRef.put(file,metadata).then(function(snapshot) {
+    newImageRef.put(file).then(function(snapshot) {
   console.log('Uploaded a blob or file!');
 });
 
 
 
 //para probar la subida de la imagen
-//return;
+return;
   
     const newProduct = {
       title: form.title.value,

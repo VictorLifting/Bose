@@ -429,7 +429,7 @@
   display: -ms-flexbox;
   display: flex;
   padding: 10px 15%;
-  background-color: green;
+  background-color: #F8F8F8;
 }
 
 .product__img {
