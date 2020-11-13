@@ -4,6 +4,8 @@ const authWithout = auth.querySelector('.auth__without');
 const authProfileSpan = auth.querySelector('.auth__profile span');
 const authSignout = auth.querySelector('.auth__signout');
 
+var userInfo;
+
 
 
 firebase.auth().onAuthStateChanged(function(user) {

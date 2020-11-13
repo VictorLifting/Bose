@@ -27,8 +27,8 @@ let selectedItem = null;
       <div class="product__info">
         <h3 class="product__title">${elem.title}</h3>
         <p class="product__price">$ ${elem.price}</p>
-        <button class="product__delete">Eliminar</button>
-        <button class="product__edit">Editar</button>
+        <button class="product__delete hidden showadmin">Eliminar</button>
+        <button class="product__edit hidden showadmin">Editar</button>
       </div>
       `;
 
@@ -69,9 +69,12 @@ let selectedItem = null;
         form.image.value=elem.img;
         form.price.value=elem.price;
         selectedItem =elem;
-      })
+      });
      
-      
+      if(userInfo && userInfo.admin) {
+        deleteBtn.classList.remove('hidden');
+        editBtn.classList.remove('hidden');
+      }
     });
    
   }
