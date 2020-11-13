@@ -1,19 +1,25 @@
 
 const db = firebase.firestore();
+  
+const productsList = document.querySelector('.productslist');
+const productsRef = db.collection("productos"); 
 const loader = document.querySelector(".loader");
 let selectedItem = null;
 
-  
-  const productsList = document.querySelector('.productslist');
-  const productsRef = db.collection("productos");
+        // Create a root reference
+        var storageRef = firebase.storage().ref();
+
+
   
   
   // creación de nuevos productos a partir de la lista
   function renderProducts (list) {
     productsList.innerHTML = '';
     list.forEach(function (elem) {
-      const newProduct = document.createElement('article');
+      const newProduct = document.createElement('a');
       newProduct.classList.add('product');
+      const url =`producto.html?${elem.id}-${elem.title}`
+      newProduct.setAttribute('href', url);
       
     
       newProduct.innerHTML = `
@@ -25,6 +31,20 @@ let selectedItem = null;
         <button class="product__edit">Editar</button>
       </div>
       `;
+
+      if(elem.storageImg) {
+          storageRef.child(elem.storageImg).getDownloadURL().then(function(url) {
+            // Or inserted into an <img> element:
+            var img = newProduct.querySelector('img');
+            img.src = url;
+          }).catch(function(error) {
+            // Handle any errors
+          });
+       
+      }   
+
+
+
       //eliminar producto
       const deleteBtn = newProduct.querySelector('.product__delete');
 
@@ -76,6 +96,8 @@ let selectedItem = null;
 
   getProducts();
 
+  var imagePath ='';
+
 
  // 
 
@@ -83,33 +105,18 @@ let selectedItem = null;
   form.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // Create a root reference
-    var storageRef = firebase.storage().ref();
 
-// Create a reference to 'mountains.jpg'
-    var newImageRef = storageRef.child('mountains.jpg');
-
-    var file = form.imageFile.files[0];// use the Blob or File API
-
-    // Create file metadata including the content type
-
-
-// Upload the file and metadata
-
-
-    newImageRef.put(file).then(function(snapshot) {
-  console.log('Uploaded a blob or file!');
-});
 
 
 
 //para probar la subida de la imagen
-return;
+ 
   
     const newProduct = {
       title: form.title.value,
       img: form.image.value,
-      price: form.price.value
+      price: form.price.value,
+      storageImg: imagePath
     };
 
     loader.classList.add("loader--show");
@@ -151,5 +158,25 @@ return;
   });
 
 
+  form.imageFile.addEventListener('change', function(){
+
+
+
+        // Create a reference to 'mountains.jpg'
+            var newImageRef = storageRef.child(`productos/${Math.floor(Math.random()*999999999)}.jpg`);
+        
+            var file = form.imageFile.files[0];// use the Blob or File API
+        
+            // Create file metadata including the content type
+        
+        
+        // Upload the file and metadata
+        
+        
+            newImageRef.put(file).then(function(snapshot) {
+          console.log('Uploaded a blob or file!');
+          imagePath= snapshot.metadata.fullPath
+        });
+  })
 
 
