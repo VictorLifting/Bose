@@ -11,6 +11,7 @@ window.addEventListener('load', function () {
     const db = firebase.firestore();
     // referencia a la coleción productos
     const productosRef = db.collection('productos');
+    var storageRef = firebase.storage().ref();
   
     //referencia al producto con el uid específico
     productosRef.doc(uid)
@@ -21,8 +22,16 @@ window.addEventListener('load', function () {
   
       const title = document.querySelector('h1');
       title.innerText = product.title;
+
+      storageRef.child(product.storageImg).getDownloadURL().then(function(url) {
+        // Or inserted into an <img> element:
+        document.querySelector('img').setAttribute('src', url);
+      }).catch(function(error) {
+        // Handle any errors
+      });
+
   
-      document.querySelector('img').setAttribute('src', product.img);
+
       document.querySelector('h2 span').innerText = product.price;
   
       document.querySelector('.details').classList.remove('hidden');

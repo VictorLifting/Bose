@@ -16,17 +16,22 @@ let selectedItem = null;
   function renderProducts (list) {
     productsList.innerHTML = '';
     list.forEach(function (elem) {
-      const newProduct = document.createElement('a');
+      const newProduct = document.createElement('div');
       newProduct.classList.add('product');
       const url =`producto.html?${elem.id}-${elem.title}`
       newProduct.setAttribute('href', url);
       
     
       newProduct.innerHTML = `
+      <a href="${url}">
       <img class="product__img" src="${elem.img}" alt="">
+      
       <div class="product__info">
         <h3 class="product__title">${elem.title}</h3>
         <p class="product__price">$ ${elem.price}</p>
+        </div>
+        </a>
+        <div>
         <button class="product__delete hidden showadmin">Eliminar</button>
         <button class="product__edit hidden showadmin">Editar</button>
       </div>
@@ -66,7 +71,7 @@ let selectedItem = null;
       const editBtn = newProduct.querySelector('.product__edit');
       editBtn.addEventListener('click',function(){
         form.title.value=elem.title;
-        form.image.value=elem.img;
+        //form.image.value=elem.img;
         form.price.value=elem.price;
         selectedItem =elem;
       });
@@ -117,7 +122,7 @@ let selectedItem = null;
   
     const newProduct = {
       title: form.title.value,
-      img: form.image.value,
+     // img: form.image.value,
       price: form.price.value,
       storageImg: imagePath
     };
@@ -130,7 +135,7 @@ let selectedItem = null;
         
       getProducts();
       form.title.value = '';
-      form.image.value = '';
+      //form.image.value = '';
       form.price.value = '';
       selectedItem =null;
 
@@ -166,7 +171,7 @@ let selectedItem = null;
 
 
         // Create a reference to 'mountains.jpg'
-            var newImageRef = storageRef.child(`productos/${Math.floor(Math.random()*999999999)}.jpg`);
+            var newImageRef = storageRef.child(`productos/${Math.floor(Math.random()*999999999)}.png`);
         
             var file = form.imageFile.files[0];// use the Blob or File API
         
