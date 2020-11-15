@@ -38,6 +38,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         authWith.classList.add('hidden');
         authWithout.classList.remove('hidden');
       }
+      window.localStorage.setItem("userId", user.uid);
   });
 
   // cerrar sesión

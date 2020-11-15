@@ -11,8 +11,10 @@ let selectedItem = null;
 
         // Create a root reference
         var storageRef = firebase.storage().ref();
-    const btn =document.querySelector(".btn");
 
+
+  
+  
   // creación de nuevos productos a partir de la lista
   function renderProducts (list) {
     productsList.innerHTML = '';
@@ -24,49 +26,16 @@ let selectedItem = null;
       
     
       newProduct.innerHTML = `
-    
-      <img class="product__img" src="${elem.img}" alt="">
+ 
+     
       
       <div class="product__info">
         <h3 class="product__title">${elem.title}</h3>
         <p class="product__price">$ ${elem.price}</p>
         </div>
-  
-        <div>
-        <button class="product__delete ">Eliminar</button>
-      </div>
+
       `;
-
-      if(elem.storageImg) {
-          storageRef.child(elem.storageImg).getDownloadURL().then(function(url) {
-            // Or inserted into an <img> element:
-            var img = newProduct.querySelector('img');
-            img.src = url;
-          }).catch(function(error) {
-            // Handle any errors
-          });
-       
-      }   
-
-
-
-      //eliminar producto
-            const deleteBtn = newProduct.querySelector('.product__delete');
-
-            deleteBtn.addEventListener('click',function(){
-        
-        
-              productsRef.doc(elem.id).delete().then(function() {
-                  getProducts();
-        
-                  console.log("Document successfully deleted!");
-              }).catch(function(error) {
-                  console.error("Error removing document: ", error);
-              });
-              })
-
       
-
       productsList.appendChild(newProduct);
 
       parseInt(elem.price);
@@ -103,9 +72,6 @@ let selectedItem = null;
 
 
  // 
- btn.addEventListener('click',function(){
-location.href='checkout.html';
- });
 
 
 

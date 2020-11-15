@@ -10,16 +10,18 @@ window.addEventListener('load', function () {
     var newProduct = {
 
     };
-
-
-   
     
     // referencia a la base de datos
     const db = firebase.firestore();
     
     // referencia a la coleción productos
     const productosRef = db.collection('productos');
-   const carritoUser = db.collection('users').doc("OSOkgsvS6pZVM6BsUhcrx1OErer1").collection('carrito');
+
+    var userId = localStorage.getItem("userId");
+
+    console.log(userId)
+
+   const carritoUser = db.collection('users').doc(userId).collection('carrito');
     var storageRef = firebase.storage().ref();
   
     //referencia al producto con el uid específico
@@ -39,7 +41,6 @@ window.addEventListener('load', function () {
         // Handle any errors
       });
 
-  
 
       document.querySelector('h2 span').innerText = product.price;
   
@@ -52,11 +53,6 @@ window.addEventListener('load', function () {
         storageImg: product.storageImg
       };
   
-
-
-
-
-      
      /* titlep = product.title;
        pricep= product.list;
 */
@@ -64,20 +60,13 @@ window.addEventListener('load', function () {
   
     console.log("");
 
-
-    
-
     const btn = document.querySelector('.btn');
-
-
 
     productosRef.doc(uid)
       .get() // traer info de ese producto
       .then(function (snapshot) {
     
         const product = snapshot.data();
-
-
 
         //console.log(newProduct)
 

@@ -25,7 +25,7 @@ let selectedItem = null;
       newProduct.innerHTML = `
       <a href="${url}">
       <img class="product__img" src="${elem.img}" alt="">
-      
+    
       <div class="product__info">
         <h3 class="product__title">${elem.title}</h3>
         <p class="product__price">$ ${elem.price}</p>
