@@ -6,11 +6,20 @@ window.addEventListener('load', function () {
     const parts = location.search.split('-');
     // usamos la primer parte y la limpiamos
     const uid = parts[0].replace('?', '');
-  
+
+    var newProduct = {
+
+    };
+
+
+   
+    
     // referencia a la base de datos
     const db = firebase.firestore();
+    
     // referencia a la coleción productos
     const productosRef = db.collection('productos');
+   const carritoUser = db.collection('users').doc("OSOkgsvS6pZVM6BsUhcrx1OErer1").collection('carrito');
     var storageRef = firebase.storage().ref();
   
     //referencia al producto con el uid específico
@@ -35,9 +44,80 @@ window.addEventListener('load', function () {
       document.querySelector('h2 span').innerText = product.price;
   
       document.querySelector('.details').classList.remove('hidden');
+
+       newProduct = {
+        title: product.title,
+       // img: form.image.value,
+        price: product.price,
+        storageImg: product.storageImg
+      };
+  
+
+
+
+
+      
+     /* titlep = product.title;
+       pricep= product.list;
+*/
     })
   
-    console.log(uid);
+    console.log("");
+
+
+    
+
+    const btn = document.querySelector('.btn');
+
+
+
+    productosRef.doc(uid)
+      .get() // traer info de ese producto
+      .then(function (snapshot) {
+    
+        const product = snapshot.data();
+
+
+
+        //console.log(newProduct)
+
+
+    /*
+        const title = document.querySelector('h1');
+        title.innerText = product.title;
+  
+        storageRef.child(product.storageImg).getDownloadURL().then(function(url) {
+          // Or inserted into an <img> element:
+          document.querySelector('img').setAttribute('src', url);
+          */
+
+        }).catch(function(error) {
+          // Handle any errors
+        });
+
+    btn.addEventListener('click',function(){
+
+
+      
+  
+
+ 
+      
+      
+      carritoUser.add(newProduct).then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function(error) {
+          console.error("Error adding document: ", error);
+      });
+
+
+
+
+
+
+
+    })
   
   });
 

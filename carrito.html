@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="icon"  type="image/png" href="./imgs/bose_logo.png   ">
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+    <section class="menu">
+        <img src="./imgs/bose_logo.png" class="menu__logo" alt="logo">
+        <p class="menu__text">Audifonos</p>
+        <p class="menu__text">Altavoces</p>
+        <p class="menu__text">Soporte</p>
+        <input class="menu__search" type="text" placeholder="Buscar...">
+        <img class="menu__search-icon" src="./imgs/lupa.png" alt="Buscar">
+        <img src="./imgs/hambur.png" alt="" class="menu__hamburger">
+    </section>
+    
+
+    <section class="side-bar">
+        <h1 class="side-bar__text">PRODUCTOS</h1>
+    </section>
+    <p class="loader">Cargando...</p> 
+    <button class="filterbtn">filtrar</button>
+
+    <section class="productslist">
+    </section>
+
+
+
+
+    <footer class="footer" >
+
+        <section class="footer__section">
+            <article class="footer__column">
+                <p class="footer__title">
+                   <strong>
+                    Comunícate 
+                    con nosotros
+                   </strong> 
+                </p>
+                <p class="footer__content">
+                    Newsletter
+                    <br>
+                    Asistencia
+                    <br>
+                    About us
+                </p>
+                
+            </article>
+            <article class="footer__column">
+                <p class="footer__title">
+                    <strong>
+                        Servicios
+                    </strong>
+                    
+                </p>
+                <p class="footer__content">
+                    Altavoces
+                    <br>
+                    Auriculares
+                    <br>
+                    Inalámbricos
+                </p>
+    
+            </article>
+            <article class="footer__column" > 
+                
+                <p class="footer__title">
+                    <strong>
+                        Política
+                    </strong>
+                    
+                </p>
+                <p class="footer__content">
+                    Términos y condiciones
+                    <br>
+                    Aviso legal
+                </p>
+    
+            </article>
+        </section>
+    </footer>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+<script src="./scripts/firebase.js"></script>
+<script src="./scripts/carrito.js"></script>
+
+</body>
+</html>

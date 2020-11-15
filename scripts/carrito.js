@@ -2,7 +2,7 @@
 const db = firebase.firestore();
   
 const productsList = document.querySelector('.productslist');
-const productsRef = db.collection("productos"); 
+const productsRef = db.collection('users').doc("OSOkgsvS6pZVM6BsUhcrx1OErer1").collection('carrito')
 const loader = document.querySelector(".loader");
 let selectedItem = null;
 
@@ -181,5 +181,3 @@ let selectedItem = null;
           imagePath= snapshot.metadata.fullPath
         });
   })
-
-
