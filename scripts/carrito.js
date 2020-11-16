@@ -1,16 +1,19 @@
 
 const db = firebase.firestore();
-  
+
 const productsList = document.querySelector('.productslist');
-var userId = localStorage.getItem("userId");
+
+var userData = JSON.parse(localStorage.getItem("userId"));
+
+var userId = userData.id;
 const productsRef = db.collection('users').doc(userId).collection('carrito')
 var totalPrice = 0;
 const loader = document.querySelector(".loader");
 const total =document.querySelector(".total");
 let selectedItem = null;
 
-        // Create a root reference
-        var storageRef = firebase.storage().ref();
+     // Create a root reference
+     var storageRef = firebase.storage().ref();
     const btn =document.querySelector(".btn");
 
   // creación de nuevos productos a partir de la lista

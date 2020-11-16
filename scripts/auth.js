@@ -6,8 +6,6 @@ const authSignout = auth.querySelector('.auth__signout');
 
 var userInfo;
 
-
-
 firebase.auth().onAuthStateChanged(function(user) {
     console.log(user);
 
@@ -19,6 +17,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         const db = firebase.firestore();
         const usersRef = db.collection('users');
         usersRef.doc(user.uid).get().then(function (doc) {
+
           if(doc.exists) {
             const data = doc.data();
             userInfo = data;
@@ -31,18 +30,36 @@ firebase.auth().onAuthStateChanged(function(user) {
                 elem.classList.remove('hidden');
               });
             }
+
+            var users ={
+              id: user.uid,
+              firstname : data.firstname,
+              lastname : data.lastname,
+              phone : data.phone,
+              email : data.email
+            }
+
+            var jsonUser = JSON.stringify(users);
+
+            window.localStorage.setItem("userId", jsonUser);
           }
         });
       } else {
         // si no existe quiere decir que no ha iniciado sesión o acaba de cerrar sesión
         authWith.classList.add('hidden');
         authWithout.classList.remove('hidden');
+
       }
-      window.localStorage.setItem("userId", user.uid);
+      window.localStorage.setItem('userId', user.uid);
+
+
   });
 
   // cerrar sesión
 authSignout.addEventListener('click', function(event) {
     event.preventDefault();
+    location.reload();
+    window.localStorage.removeItem('userId');
     firebase.auth().signOut();
+
   });

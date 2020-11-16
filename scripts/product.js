@@ -17,11 +17,19 @@ window.addEventListener('load', function () {
     // referencia a la coleción productos
     const productosRef = db.collection('productos');
 
-    var userId = localStorage.getItem("userId");
+
+
+    var userData = JSON.parse(localStorage.getItem("userId"));
+
+    var userId = userData.id;
 
     console.log(userId)
 
-   const carritoUser = db.collection('users').doc(userId).collection('carrito');
+    if(userId!=null){
+
+      var carritoUser = db.collection('users').doc(userId).collection('carrito');
+    }
+
     var storageRef = firebase.storage().ref();
   
     //referencia al producto con el uid específico
@@ -36,7 +44,7 @@ window.addEventListener('load', function () {
 
       storageRef.child(product.storageImg).getDownloadURL().then(function(url) {
         // Or inserted into an <img> element:
-        document.querySelector('img').setAttribute('src', url);
+        document.querySelector('.imgProduct').setAttribute('src', url);
       }).catch(function(error) {
         // Handle any errors
       });
@@ -85,29 +93,17 @@ window.addEventListener('load', function () {
         });
 
     btn.addEventListener('click',function(){
-
-
-      
-  
-
- 
-      
-      
+      if(userId==null){
+        alert("Debes registrarte e ingresar para poder agregar productos al carrito")
+      }  
       carritoUser.add(newProduct).then(function(docRef) {
           console.log("Document written with ID: ", docRef.id);
       })
       .catch(function(error) {
           console.error("Error adding document: ", error);
+
       });
-
-
-
-
-
-
-
-    })
-  
+    }) 
   });
 
 
