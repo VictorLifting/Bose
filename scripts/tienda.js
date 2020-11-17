@@ -85,19 +85,19 @@ let selectedItem = null;
   }
 
     //leer los productos de firebase
-
+ let objectsList =[]
   function getProducts(){
 
     productsRef.get().then((querySnapshot) => {
-      var objects = [];
+       objectsList = [];
       querySnapshot.forEach((doc) => {
           const obj = doc.data();
           obj.id= doc.id;
-          objects.push(obj);
+          objectsList.push(obj);
           console.log(`${doc.id} => ${doc.data()}`);
       });
-      renderProducts(objects);
-     loader.classList.remove("loader--show")
+      renderProducts(objectsList);
+     //loader.classList.remove("loader--show")
   });
 
   }
@@ -182,4 +182,46 @@ let selectedItem = null;
         });
   })
 
+  //filtros
+
+  const filterForm = document.querySelector('.filterform');
+  filterForm.addEventListener('input', function() {
+  
+    let copy = objectsList.slice();
+  
+    const order = filterForm.order.value;
+    switch(order){
+      case 'price_asc':
+        copy.sort(function(a, b){
+          return a.price - b.price;
+        });
+        break;
+      case 'price_desc':
+        copy.sort(function(a, b){
+          return b.price - a.price;
+        });
+        break;
+    }
+  
+    const nameFilter = filterForm.name.value;
+    if(nameFilter != '') {
+      copy = copy.filter(function(elem){
+        if(elem.title.toLowerCase().includes(nameFilter)) {
+          return true;
+        }
+        return false;
+      });
+    }
+  
+    const price = filterForm.price.value;
+    if(price) {
+      copy = copy.filter(function(elem) {
+        if(elem.price < parseInt(price)) {
+          return true;
+        }
+      });
+    }
+  
+    renderProducts(copy);
+  });
 

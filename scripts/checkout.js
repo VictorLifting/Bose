@@ -105,20 +105,6 @@ var userInfo = db.collection('users').doc(userId);
 
 
 
-      userInfo.get().then((doc) => {
-        const info= doc.data
-
-        /*
-       var userS={
-          nombre=info.firstname,
-          apellido =info.lastname,
-          numero =info.phone
-        }
-        
-*/
-    });
-
-
       var compra= {
         id:userId,
         firstname: userData.firstname,
@@ -182,6 +168,10 @@ var userInfo = db.collection('users').doc(userId);
   })
 
   console.log(pedido)
+
+  btn.addEventListener('click',function(){
+    //  location.href='perfil.html';
+     });
 
 
 

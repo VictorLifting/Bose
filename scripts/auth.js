@@ -50,7 +50,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         authWithout.classList.remove('hidden');
 
       }
-      window.localStorage.setItem('userId', user.uid);
+     // window.localStorage.setItem('userId', user.uid);
 
 
   });
