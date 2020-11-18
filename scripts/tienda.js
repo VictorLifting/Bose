@@ -23,15 +23,16 @@ let selectedItem = null;
       
     
       newProduct.innerHTML = `
-      <a href="${url}">
+      <a href="${url}" class="link" >
       <img class="product__img" src="${elem.img}" alt="">
-    
-      <div class="product__info">
+      </a>
+      <a href="${url}" class="link">
+      <div
         <h3 class="product__title">${elem.title}</h3>
         <p class="product__price">$ ${elem.price}</p>
-        </div>
-        </a>
         <div>
+        </a>
+        
         <button class="product__delete hidden showadmin">Eliminar</button>
         <button class="product__edit hidden showadmin">Editar</button>
       </div>
@@ -118,11 +119,12 @@ let selectedItem = null;
       title: form.title.value,
      // img: form.image.value,
       price: form.price.value,
+      details: form.details.value, 
       storageImg: imagePath,
      
     };
 
-    loader.classList.add("loader--show");
+  //  loader.classList.add("loader--show");
 
 
 
@@ -131,7 +133,7 @@ let selectedItem = null;
       getProducts();
       form.title.value = '';
       //form.image.value = '';
-      form.price.value = '';
+      form.price.value = '';  
       selectedItem =null;
 
   }

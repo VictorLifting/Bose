@@ -44,13 +44,15 @@ window.addEventListener('load', function () {
 
       storageRef.child(product.storageImg).getDownloadURL().then(function(url) {
         // Or inserted into an <img> element:
-        document.querySelector('.imgProduct').setAttribute('src', url);
+        document.querySelector('.details__img').setAttribute('src', url);
       }).catch(function(error) {
         // Handle any errors
       });
 
 
       document.querySelector('h2 span').innerText = product.price;
+
+      document.querySelector('.details__data').innerText = product.details;
   
       document.querySelector('.details').classList.remove('hidden');
 
@@ -58,6 +60,7 @@ window.addEventListener('load', function () {
         title: product.title,
        // img: form.image.value,
         price: product.price,
+        details :product.details,
         storageImg: product.storageImg
       };
   
@@ -97,6 +100,7 @@ window.addEventListener('load', function () {
         alert("Debes registrarte e ingresar para poder agregar productos al carrito")
       }  
       carritoUser.add(newProduct).then(function(docRef) {
+          alert("Producto agregado al carrito")
           console.log("Document written with ID: ", docRef.id);
       })
       .catch(function(error) {

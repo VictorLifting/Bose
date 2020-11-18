@@ -30,13 +30,12 @@ let selectedItem = null;
     
       <img class="product__img" src="${elem.img}" alt="">
       
-      <div class="product__info">
+      <div >
         <h3 class="product__title">${elem.title}</h3>
         <p class="product__price">$ ${elem.price}</p>
-        </div>
-  
-        <div>
         <button class="product__delete ">Eliminar</button>
+
+        
       </div>
       `;
 

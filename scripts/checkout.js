@@ -90,8 +90,9 @@ var userInfo = db.collection('users').doc(userId);
 
       
       <div class="product__info">
-        <h3 class="product__title">${elem.title}</h3>
-        <p class="product__price">$ ${elem.price}</p>
+
+        <h3 class="">${elem.title}</h3>
+        <p class="">$ ${elem.price}</p>
         </div>
 
       `;

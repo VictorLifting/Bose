@@ -1,10 +1,20 @@
+.productslist{
+  margin: 5% 0px;
+
+}
+
 .product {
     border-bottom: 1px solid gray;
     display: flex;
-    padding: 10px 15%;
+    margin: 0px 15%;
     background-color: #F8F8F8;
+
+    &__info{
+      display: flex;
+      //background-color: khaki;
+    }
   
-    &__img {
+    &__img { 
       width: 150px;
       height: 150px;
       object-fit: contain;
@@ -16,6 +26,7 @@
     &__title {
       margin-top: 0px;
       font-weight: lighter;
+      font-size: 20px;
 
     }
     &__price {
@@ -24,6 +35,13 @@
         font-size: larger;
   
     }
+    
+   /*
+    &__check{
+        display: flex;
+        background-color: lightcoral;
+    }
+*/
   }
   
   

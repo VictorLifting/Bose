@@ -30,7 +30,7 @@ let selectedItem = null;
     
       <img class="product__img" src="${elem.img}" alt="">
       
-      <div class="product__info">
+      <div class="">
       <p class=""> ${elem.firstname}</p>
       <p class="">Telefono ${elem.phone}</p>
       <p class="">Email ${elem.email}</p>
