@@ -12,7 +12,9 @@ register.addEventListener('submit', function (event) {
     
     const firstname = register.firstname.value;
     const lastname = register.lastname.value;
-    const phone = register.phone.value;
+    const direction = register.direction.value;
+    const credit = register.credit.value;
+
 
 
 
@@ -26,7 +28,8 @@ register.addEventListener('submit', function (event) {
     usersRef.doc(uid).set({
       firstname: firstname,
       lastname: lastname,
-      phone: phone,
+      direction: direction,
+      credit: credit,
       email: email,
     })
     .then(function () {

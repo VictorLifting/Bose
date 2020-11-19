@@ -7,7 +7,7 @@ var userData = JSON.parse(localStorage.getItem("userId"));
 
 var userId = userData.id;
 const productsRef = db.collection('users').doc(userId).collection('carrito')
-var totalPrice = 0;
+let totalPrice=0;
 const loader = document.querySelector(".loader");
 const total =document.querySelector(".total");
 let selectedItem = null;
@@ -71,10 +71,11 @@ let selectedItem = null;
 
       productsList.appendChild(newProduct);
 
-      parseInt(elem.price);
-      totalPrice += elem.price;
+     
+      totalPrice += parseInt(elem.price);
 
       console.log(totalPrice)
+      total.innerText = totalPrice;
 
     });
    
@@ -108,7 +109,7 @@ let selectedItem = null;
  btn.addEventListener('click',function(){
 location.href='checkout.html';
  });
-
+ 
 
 
 

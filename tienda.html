@@ -29,9 +29,9 @@
 
     <section class="menu">
         <img src="./imgs/bose_logo.png" class="menu__logo" alt="logo">
-        <p class="menu__text">Audifonos</p>
-        <p class="menu__text">Altavoces</p>
-        <p class="menu__text">Soporte</p>
+        <p class="menu__text">Home</p>
+        <p class="menu__text">Tienda</p>
+        <p class="menu__text">Carrito</p>
         <input class="menu__search" type="text" placeholder="Buscar...">
         <img class="menu__search-icon" src="./imgs/lupa.png" alt="Buscar">
         <img src="./imgs/hambur.png" alt="" class="menu__hamburger">
@@ -59,34 +59,83 @@
           <option value="">Selecciona una opción</option>
           <option value="price_asc">Precio menor a mayor</option>
           <option value="price_desc">Precio mayor a menor</option>
+          <option value="alfabeticA">A-Z</option>
+          <option value="alfabeticZ">Z-A</option>
         </select>
       </label>
 
-      <h4>Filtrar por nombre:</h4>
+      <h4>Filtrar por tipo:</h4>
       <label>
-        <input type="radio" name="name" value="" checked>
+        <input type="radio" name="type" value="" checked>
         Todos
       </label>
       <label>
-        <input type="radio" name="name" value="pariatur">
-        Pariatur
+        <input type="radio" name="type" value="Audifono">
+        Audifono
       </label>
       <label>
-        <input type="radio" name="name" value="sunt">
-        Sunt
-      </label>
-      <label>
-        <input type="radio" name="name" value="edit">
-        Edit
+        <input type="radio" name="type" value="Altavoz">
+        Altavoz
       </label>
 
+
+      <h4>Filtrar por Conectividad:</h4>
+      <label>
+        <input type="radio" name="conectivity" value="" checked>
+        Todos
+      </label>
+      <label>
+        <input type="radio" name="conectivity" value="Alámbrico">
+        Alámbrico
+      </label>
+      <label>
+        <input type="radio" name="conectivity" value="Inalámbrico">
+        Inalámbrico
+      </label>
+
+      <h4>Filtrar por Color:</h4>
+      <label>
+        <input type="radio" name="color" value="" checked>
+        Todos
+      </label>
+      <label>
+        <input type="radio" name="color" value="Blanco">
+        Blanco
+      </label>
+      <label>
+        <input type="radio" name="color" value="Negro">
+        Negro
+      </label>
+
+      
+
+<!--
       <br>
       <label>
         Productos menores a:
         <input type="number" name="price">
       </label>
+       -->
+    </form>
+
+<!--
+    <form class="filter">
+    <h4>Filtrar por Conectividad:</h4>
+      <label>
+        <input type="radio" name="name" value="" checked>
+        Todos
+      </label>
+      <label>
+        <input type="radio" name="name" value="alámbrico">
+        Alámbrico
+      </label>
+      <label>
+        <input type="radio" name="name" value="inalámbrico">
+        Inalámbrico
+      </label>
     </form>
   </aside>
+  -->
   <!--
     <button class="filterbtn">filtrar</button>
  -->
@@ -114,7 +163,30 @@
           Detalles
           <input name="details" type="text">
         </label>
-
+        <label class="form__label">
+          Tipo
+        <select name="type" class="form__label">
+          <option value="">Selecciona</option> 
+          <option value="Audifono">Audifono</option> 
+          <option value="Altavoz">Altavoz</option>
+        </select>
+      </label>
+      <label class="form__label">
+        Conectividad
+        <select name="conectivity" class="form__label">
+          <option value="">Selecciona</option> 
+          <option value="Alámbrico">Alámbrico</option> 
+          <option value="Inalámbrico">Inalámbrico</option>
+        </select>
+      </label>
+      <label class="form__label">
+        Color
+        <select name="color" class="form__label">
+          <option value="">Selecciona</option> 
+          <option value="Blanco">Blanco</option> 
+          <option value="Negro">Negro</option>
+        </select>
+      </label>
         <input type="file" name="imageFile">
 
     

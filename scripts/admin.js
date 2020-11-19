@@ -33,7 +33,9 @@ let selectedItem = null;
       
       <div class="">
       <p class=""> ${elem.firstname}</p>
-      <p class="">Telefono ${elem.phone}</p>
+      <p class=""> ${elem.lastname}</p>
+      <p class="">Dirección ${elem.direction}</p>
+      <p class="">Tarjeta de crédito ${elem.credit}</p>
       <p class="">Email ${elem.email}</p>
         <h3 class="product__title">${elem.title}</h3>
         <p class="product__price">$ ${elem.price}</p>

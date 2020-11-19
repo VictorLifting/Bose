@@ -2,6 +2,9 @@
 const db = firebase.firestore();
 
 const productsList = document.querySelector('.productslist');
+const nameU = document.querySelector('.name');
+const direction = document.querySelector('.direction');
+const credit = document.querySelector('.credit');
 
 var userData = JSON.parse(localStorage.getItem("userId"));
 
@@ -32,7 +35,9 @@ let selectedItem = null;
       
       <div class="">
       <p class=""> ${elem.firstname}</p>
-      <p class="">Telefono ${elem.phone}</p>
+      <p class=""> ${elem.lastname}</p>
+      <p class="">Dirección ${elem.direction}</p>
+      <p class="">Tarjeta de crédito ${elem.credit}</p>
       <p class="">Email ${elem.email}</p>
         <h3 class="product__title">${elem.title}</h3>
         <p class="product__price">$ ${elem.price}</p>
@@ -102,6 +107,12 @@ let selectedItem = null;
   getProducts();
 
   var imagePath ='';
+
+
+
+  nameU.innerText = userData.name;
+  direction.innerText = userData.direction;
+  credit.innerText = userData.credit;
 
 
  

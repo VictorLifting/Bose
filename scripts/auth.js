@@ -35,7 +35,8 @@ firebase.auth().onAuthStateChanged(function(user) {
               id: user.uid,
               firstname : data.firstname,
               lastname : data.lastname,
-              phone : data.phone,
+              direction : data.direction,
+              credit: data.credit,
               email : data.email
             }
 

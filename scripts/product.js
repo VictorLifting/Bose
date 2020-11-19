@@ -21,7 +21,12 @@ window.addEventListener('load', function () {
 
     var userData = JSON.parse(localStorage.getItem("userId"));
 
-    var userId = userData.id;
+    if(userData!=null){
+      var userId = userData.id;
+
+    }
+
+    
 
     console.log(userId)
 

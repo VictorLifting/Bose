@@ -30,6 +30,9 @@ let selectedItem = null;
       <div
         <h3 class="product__title">${elem.title}</h3>
         <p class="product__price">$ ${elem.price}</p>
+        <p class=""> ${elem.type}</p>
+        <p class=""> ${elem.conectivity}</p>
+
         <div>
         </a>
         
@@ -119,7 +122,10 @@ let selectedItem = null;
       title: form.title.value,
      // img: form.image.value,
       price: form.price.value,
-      details: form.details.value, 
+      details: form.details.value,
+      type: form.type.value,
+      conectivity: form.conectivity.value,
+      color: form.color.value, 
       storageImg: imagePath,
      
     };
@@ -134,6 +140,10 @@ let selectedItem = null;
       form.title.value = '';
       //form.image.value = '';
       form.price.value = '';  
+      form.details.value = '';
+      form.type.value = '';
+      form.conectivity.value = '';
+      form.color.value = '';
       selectedItem =null;
 
   }
@@ -203,18 +213,68 @@ let selectedItem = null;
           return b.price - a.price;
         });
         break;
+
+        case 'alfabeticA':
+          copy.sort(function (a, b) {
+            return a.title.localeCompare(b.title);
+          });
+          break;
+
+          case 'alfabeticZ':
+            copy.sort(function (a, b) {
+              return b.title.localeCompare(a.title);
+            });
+            break;
+
     }
-  
-    const nameFilter = filterForm.name.value;
-    if(nameFilter != '') {
+    
+    
+    const typeFilter = filterForm.type.value;
+    if(typeFilter != '') {
       copy = copy.filter(function(elem){
-        if(elem.title.toLowerCase().includes(nameFilter)) {
+        if(elem.type===typeFilter) {
           return true;
         }
         return false;
       });
     }
-  
+
+ 
+    const conectivityFilter = filterForm.conectivity.value;
+    if(conectivityFilter != '') {
+      copy = copy.filter(function(elem){
+        if(elem.conectivity===conectivityFilter) {
+          return true;
+        }
+        return false;
+      });
+    }
+
+    const colorFilter = filterForm.color.value;
+    if(colorFilter != '') {
+      copy = copy.filter(function(elem){
+        if(elem.color===colorFilter) {
+          return true;
+        }
+        return false;
+      });
+    }
+    
+
+    //nuevo
+    /*
+    if(nameFilter != '') {
+      copy = copy.filter(function(elem){
+        if(elem.conectivity.toLowerCase().includes(nameFilter)) {
+          return true;
+        }
+        return false;
+      });
+    }
+    */
+
+    
+  /*
     const price = filterForm.price.value;
     if(price) {
       copy = copy.filter(function(elem) {
@@ -222,8 +282,36 @@ let selectedItem = null;
           return true;
         }
       });
+     
     }
-  
+  */
     renderProducts(copy);
   });
 
+
+
+/*
+  const filterForm = document.querySelector('.filter');
+  filterForm.addEventListener('input', function() {
+  
+    let copy = objectsList.slice();
+  
+
+
+
+    if(nameFilter != '') {
+      copy = copy.filter(function(elem){
+        if(elem.conectivity.toLowerCase().includes(nameFilter)) {
+          return true;
+        }
+        return false;
+      });
+    }
+
+
+
+
+  
+    renderProducts(copy);
+  });
+*/

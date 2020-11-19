@@ -8,7 +8,7 @@ var userData = JSON.parse(localStorage.getItem("userId"));
 var userId = userData.id;
 
 var productsRef = db.collection('users').doc(userId).collection('carrito');
-var totalPrice = 0;
+let totalPrice = 0;
 const name = document.querySelector('.name');
 const loader = document.querySelector(".loader");
 const total =document.querySelector(".total");
@@ -45,7 +45,8 @@ var userInfo = db.collection('users').doc(userId);
           
               firstname: user.firstname,
               lastname :user.lastname,
-              phone :user.phone
+              direction :user.direction,
+              credit: user.credit
             }
            // userData.push(temp)
             console.log(temp.firstname)
@@ -99,10 +100,10 @@ var userInfo = db.collection('users').doc(userId);
       
       productsList.appendChild(newProduct);
 
-      
       totalPrice += parseInt(elem.price);
 
-      console.log(totalPrice);
+      console.log(totalPrice)
+      total.innerText = totalPrice;
 
 
 
@@ -110,7 +111,8 @@ var userInfo = db.collection('users').doc(userId);
         id:userId,
         firstname: userData.firstname,
         lastname: userData.lastname,
-        phone: userData.phone,
+        direction: userData.direction,
+        credit:userData.credit,
         email: userData.email,  
         title: elem.title,
        // img: form.image.value,
@@ -173,6 +175,10 @@ var userInfo = db.collection('users').doc(userId);
   btn.addEventListener('click',function(){
     //  location.href='perfil.html';
      });
+
+
+     
+   
 
 
 
