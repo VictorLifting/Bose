@@ -4,7 +4,7 @@ const db = firebase.firestore();
 const productsList = document.querySelector('.productslist');
 const nameU = document.querySelector('.name');
 const direction = document.querySelector('.direction');
-const credit = document.querySelector('.credit');
+const credit = document.querySelector('.tarjeta');
 
 var userData = JSON.parse(localStorage.getItem("userId"));
 
@@ -110,7 +110,7 @@ let selectedItem = null;
 
 
 
-  nameU.innerText = userData.name;
+  nameU.innerText = userData.firstname +" " + userData.lastname;
   direction.innerText = userData.direction;
   credit.innerText = userData.credit;
 
