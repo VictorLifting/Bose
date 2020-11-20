@@ -16,7 +16,7 @@
 .menu__text {
   color: white;
   padding-right: 150px;
-  margin-top: 1%;
+  margin-top: 15px;
 }
 
 .menu__search {
@@ -284,6 +284,10 @@
   font-weight: lighter;
 }
 
+.footer--2 {
+  margin-top: 200px;
+}
+
 @media screen and (max-width: 900px) {
   .footer__section {
     -webkit-box-orient: vertical;
@@ -479,6 +483,7 @@
 }
 
 .form {
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -490,8 +495,7 @@
   border: 1px solid gray;
   border-radius: 5px;
   padding: 30px;
-  margin: auto;
-  margin-bottom: 30px;
+  margin: 50px auto;
 }
 
 .form__title {
@@ -532,6 +536,11 @@
           box-shadow: 5px 0px 5px #dddddd;
   margin: 80px 0px;
   border-radius: 10px;
+}
+
+.background {
+  background-image: url("../imgs/background.png");
+  background-size: cover;
 }
 
 .details {

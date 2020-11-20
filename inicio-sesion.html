@@ -6,13 +6,19 @@
   <title>Document</title>
   <link rel="stylesheet" href="./styles/main.css">
 </head>
-<body>
-
+<body >
+<section class="background">
   <section class="menu">
     <img src="./imgs/bose_logo.png" class="menu__logo" alt="logo">
-    <p class="menu__text">Audifonos</p>
-    <p class="menu__text">Altavoces</p>
-    <p class="menu__text">Soporte</p>
+    <a href="index.html" class="link">
+      <p class="menu__text">Home</p>
+    </a>
+      <a href="tienda.html" class="link">
+      <p class="menu__text">Tienda</p>
+    </a>
+    <a href="carrito.html" class="link">
+      <p class="menu__text">Carrito</p>
+    </a>
     <input class="menu__search" type="text" placeholder="Buscar...">
     <img class="menu__search-icon" src="./imgs/lupa.png" alt="Buscar">
     <img src="./imgs/hambur.png" alt="" class="menu__hamburger">
@@ -39,10 +45,12 @@
     <button type="submit">
       Iniciar
     </button>
+
+    <p>¿No tienes una cuenta? <a href="register.html"> Registrate</a></p>
   </form>
 
 
-  <footer class="footer" >
+  <footer class="footer footer--2" >
 
     <section class="footer__section">
         <article class="footer__column">
@@ -93,6 +101,7 @@
 
         </article>
     </section>
+  </section>
 </footer>
 
 

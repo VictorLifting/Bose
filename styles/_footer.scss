@@ -2,6 +2,8 @@
 
     background-color: $secondary-color;
 
+    
+
     &__section{
         display: flex;
 
@@ -24,6 +26,10 @@
 
     }
     
+
+    &--2{
+        margin-top: 200px;
+    }
     
 }
 
