@@ -543,6 +543,10 @@
   background-size: cover;
 }
 
+.totaltext {
+  font-size: 30px;
+}
+
 .details {
   display: -webkit-box;
   display: -ms-flexbox;
