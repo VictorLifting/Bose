@@ -15,6 +15,10 @@ const total =document.querySelector(".total");
 const btn = document.querySelector(".btn");
 let confirmarPedido = false;
 let pedido=[];
+const direction = document.querySelector('.direction');
+const credit = document.querySelector('.credit');
+
+
 
 
 //var userInfo = db.collection('users').doc(userId);
@@ -48,10 +52,14 @@ var userInfo = db.collection('users').doc(userId);
               direction :user.direction,
               credit: user.credit
             }
+
+            direction.innerText= user.direction;
+            credit.innerText=user.credit;
            // userData.push(temp)
             console.log(temp.firstname)
             //nombre=userData[0].firstname;
-            name.innerText = temp.firstname;
+            name.innerText = temp.firstname+" "+ temp.lastname;
+
 
         } else {
             // doc.data() will be undefined in this case

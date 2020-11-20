@@ -1,6 +1,6 @@
 
 const db = firebase.firestore();
-  
+const admin =document.querySelector('.auth__profile')
 const productsList = document.querySelector('.productslist');
 const productsRef = db.collection("productos"); 
 const loader = document.querySelector(".loader");
@@ -83,7 +83,13 @@ let selectedItem = null;
       if(userInfo && userInfo.admin) {
         deleteBtn.classList.remove('hidden');
         editBtn.classList.remove('hidden');
+
+
+        admin.setAttribute('href', "index.html");
+
       }
+
+
     });
    
   }
