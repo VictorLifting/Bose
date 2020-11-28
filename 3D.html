@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D</title>
     <link rel="icon"  type="image/png" href="./imgs/bose_logo.png   ">
-    <!--
+    
     <link rel="stylesheet" href="./styles/main.css">
-
+<!--
     -->
 </head>
 <body>
     <!--
+        -->
     <section class="menu">
 
         <img src="./imgs/bose_logo.png" class="menu__logo" alt="logo">
@@ -31,9 +32,11 @@
 
     </section>
     
--->
 
 
+    <div class="model"> 
+
+    </div>
 
 
 
@@ -44,6 +47,7 @@
 
 
 <!--
+    -->
     <footer class="footer footer--2">
 
         <section class="footer__section">
@@ -96,11 +100,11 @@
             </article>
         </section>
     </footer>
--->
+
 
 		<script type="module">
 
-			import * as THREE from '/local/three.module.js';
+			import * as THREE from 'Bose/local/three.module.js';
 
 			import { OrbitControls } from '/dependences/OrbitControls.js';
 			import { GLTFLoader } from '/dependences/GLTFLoader.js';
@@ -114,7 +118,7 @@
 
 			function init() {
 
-				const container = document.createElement( 'div' );
+				const container = document.querySelector('.model');
 				document.body.appendChild( container );
 
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.25, 5000 );
@@ -150,7 +154,7 @@
 								if ( child.isMesh ) {
 
 									// TOFIX RoughnessMipmapper seems to be broken with WebGL 2.0
-									// roughnessMipmapper.generateMipmaps( child.material );
+									 roughnessMipmapper.generateMipmaps( child.material );
 
 								}
 
