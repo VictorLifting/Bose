@@ -34,19 +34,10 @@
     
 
 
-    <div class="model"> 
+    <div class="model" > 
 
     </div>
 
-
-
-
-
-
-
-
-
-<!--
     
     <footer class="footer footer--2">
 
@@ -100,119 +91,118 @@
             </article>
         </section>
     </footer>
--->
 
-		<script type="module">
 
-			import * as THREE from '/Bose/local/three.module.js';
+<script type="module">
 
-			import { OrbitControls } from '/Bose/dependences/OrbitControls.js';
-			import { GLTFLoader } from '/Bose/dependences/GLTFLoader.js';
-			import { RGBELoader } from '/Bose/dependences/RGBELoader.js';
-			import { RoughnessMipmapper } from '/Bose/dependences/RoughnessMipmapper.js';
+    import * as THREE from '/local/three.module.js';
 
-			let camera, scene, renderer;
+    import { OrbitControls } from '/dependences/OrbitControls.js';
+    import { GLTFLoader } from '/dependences/GLTFLoader.js';
+    import { RGBELoader } from '/dependences/RGBELoader.js';
+    import { RoughnessMipmapper } from '/dependences/RoughnessMipmapper.js';
 
-			init();
-			render();
+    let camera, scene, renderer;
 
-			function init() {
+    init();
+    render();
 
-				const container = document.querySelector('.model');
-				document.body.appendChild( container );
+    function init() {
 
-				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.25, 5000 );
-				camera.position.set( - 1.8, 0.6, 1000 );
+        const container = document.querySelector('.model');
+       // document.body.appendChild( container );
 
-				scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.25, 5000 );
+        camera.position.set( - 1.8, 0.6, 1000 );
 
-				new RGBELoader()
-					.setDataType( THREE.UnsignedByteType )
-					.setPath( 'textures/equirectangular/' )
-					.load( 'quarry_01_1k.hdr', function ( texture ) {
+        scene = new THREE.Scene();
 
-						const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
+        new RGBELoader()
+            .setDataType( THREE.UnsignedByteType )
+            .setPath( 'textures/equirectangular/' )
+            .load( 'quarry_01_1k.hdr', function ( texture ) {
 
-						scene.background = envMap;
-						scene.environment = envMap;
+                const envMap = pmremGenerator.fromEquirectangular( texture ).texture;
 
-						texture.dispose();
-						pmremGenerator.dispose();
+                scene.background = envMap;
+                scene.environment = envMap;
 
-						render();
+                texture.dispose();
+                pmremGenerator.dispose();
 
-						// model
+                render();
 
-						// use of RoughnessMipmapper is optional
-						const roughnessMipmapper = new RoughnessMipmapper( renderer );
+                // model
 
-						const loader = new GLTFLoader().setPath( 'model/' );
-						loader.load( 'scene.gltf', function ( gltf ) {
+                // use of RoughnessMipmapper is optional
+                const roughnessMipmapper = new RoughnessMipmapper( renderer );
 
-							gltf.scene.traverse( function ( child ) {
+                const loader = new GLTFLoader().setPath( 'model/' );
+                loader.load( 'scene.gltf', function ( gltf ) {
 
-								if ( child.isMesh ) {
+                    gltf.scene.traverse( function ( child ) {
 
-									// TOFIX RoughnessMipmapper seems to be broken with WebGL 2.0
-									 roughnessMipmapper.generateMipmaps( child.material );
+                        if ( child.isMesh ) {
 
-								}
+                            // TOFIX RoughnessMipmapper seems to be broken with WebGL 2.0
+                             roughnessMipmapper.generateMipmaps( child.material );
 
-							} );
+                        }
 
-							scene.add( gltf.scene );
+                    } );
 
-							roughnessMipmapper.dispose();
+                    scene.add( gltf.scene );
 
-							render();
+                    roughnessMipmapper.dispose();
 
-						} );
+                    render();
 
-					} );
+                } );
 
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				renderer.toneMapping = THREE.ACESFilmicToneMapping;
-				renderer.toneMappingExposure = 1;
-				renderer.outputEncoding = THREE.sRGBEncoding;
-				container.appendChild( renderer.domElement );
+            } );
 
-				const pmremGenerator = new THREE.PMREMGenerator( renderer );
-				pmremGenerator.compileEquirectangularShader();
+        renderer = new THREE.WebGLRenderer( { antialias: true } );
+        renderer.setPixelRatio( window.devicePixelRatio );
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.toneMappingExposure = 1;
+        renderer.outputEncoding = THREE.sRGBEncoding;
+        container.appendChild( renderer.domElement );
 
-				const controls = new OrbitControls( camera, renderer.domElement );
-				controls.addEventListener( 'change', render ); // use if there is no animation loop
-				controls.minDistance = 2;
-				controls.maxDistance = 3000;
-				controls.target.set( 0, 0, - 0.2 );
-				controls.update();
+        const pmremGenerator = new THREE.PMREMGenerator( renderer );
+        pmremGenerator.compileEquirectangularShader();
 
-				window.addEventListener( 'resize', onWindowResize, false );
+        const controls = new OrbitControls( camera, renderer.domElement );
+        controls.addEventListener( 'change', render ); // use if there is no animation loop
+        controls.minDistance = 2;
+        controls.maxDistance = 3000;
+        controls.target.set( 0, 0, - 0.2 );
+        controls.update();
 
-			}
+        window.addEventListener( 'resize', onWindowResize, false );
 
-			function onWindowResize() {
+    }
 
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
+    function onWindowResize() {
 
-				renderer.setSize( window.innerWidth, window.innerHeight );
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
 
-				render();
+        renderer.setSize( window.innerWidth, window.innerHeight );
 
-			}
+        render();
 
-			//
+    }
 
-			function render() {
+    //
 
-				renderer.render( scene, camera );
+    function render() {
 
-			}
+        renderer.render( scene, camera );
 
-		</script>
+    }
 
+</script>
 
 
 

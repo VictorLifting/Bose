@@ -203,6 +203,7 @@ let selectedItem = null;
   //filtros
 
   const filterForm = document.querySelector('.filterform');
+  
   filterForm.addEventListener('input', function() {
   
     let copy = objectsList.slice();
