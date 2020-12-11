@@ -214,6 +214,8 @@
 <script src="./scripts/main.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="./scripts/microinteraction.js"></script>
 
 <script type="module">
 
@@ -310,7 +312,7 @@
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
 
-        renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
+        renderer.setSize( window.innerWidth, window.innerHeight );
 
         render();
 
