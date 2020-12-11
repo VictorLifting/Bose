@@ -1,9 +1,9 @@
 const carrousel = document.querySelector('.carrousel');
-const carrouselStripe = document.querySelector('.carrousel__stripe');
+//const carrouselStripe = document.querySelector('.carrousel__stripe');
 var btnInteraction = document.querySelectorAll('.btn--interaction');
 const img = document.querySelector('.interaction__image');
 let current=0;
-
+/*
 carrousel.addEventListener('click', function(){
     current++;
     if(current>2){
@@ -14,6 +14,7 @@ carrousel.addEventListener('click', function(){
     console.log(800*current)
 
 })
+*/
 
 function interactionHandle (event){
     var bot = event.target.getAttribute('name');
